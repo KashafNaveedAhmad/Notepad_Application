@@ -1,4 +1,5 @@
 from tkinter import *
+from PIL import Image, ImageTk
 import working  # Import the next stage to show the working area
 
 # Function to show the main working area
@@ -13,6 +14,14 @@ def show_title_selection(root):
     global title_selection_frame
     title_selection_frame = Frame(root, bg="black")
     title_selection_frame.pack(fill="both", expand=True)
+
+    # Load and display the image
+    image = Image.open("project\\3.webp")  # Replace with your image path
+    image = image.resize((450, 300))  # Resize the image to fit the screen width
+    photo = ImageTk.PhotoImage(image)
+    image_label = Label(title_selection_frame, image=photo, bg="black")
+    image_label.photo = photo  # Keep a reference to avoid garbage collection
+    image_label.pack(pady=10)  # Add padding between image and other elements
 
     # Title Selection Design
     title_label = Label(title_selection_frame, text="Enter Notepad Title", font=("Arial", 20, "bold"), bg="black", fg="white")
@@ -36,4 +45,3 @@ if __name__ == "__main__":
     show_title_selection(root)  # Show the title selection screen
 
     root.mainloop()
-
