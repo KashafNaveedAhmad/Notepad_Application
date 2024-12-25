@@ -4,7 +4,35 @@ import front
 import subprocess
 import sys
 import title
+import theme
 
+def apply_theme(widget, theme_dict):
+    """Apply theme to a widget."""
+    widget.config(bg=theme_dict["bg"], fg=theme_dict["fg"])
+
+def toggle_theme():
+    """Toggle between light and dark themes."""
+    global current_theme
+    if current_theme == theme.LIGHT_THEME:
+     current_theme = theme.DARK_THEME
+    elif current_theme == theme.DARK_THEME:
+        current_theme = theme.SLATE_GREY_THEME
+    elif current_theme == theme.SLATE_GREY_THEME:
+        current_theme = theme.STEEL_BLUE_2_THEME
+    elif current_theme == theme.STEEL_BLUE_2_THEME:
+        current_theme = theme.DARK_ORCHID_4_THEME
+    elif current_theme == theme.DARK_ORCHID_4_THEME:
+        current_theme = theme.HOT_PINK_THEME
+    else:
+        current_theme = theme.LIGHT_THEME
+    
+    refresh_ui()
+
+def refresh_ui():
+    """Refresh the UI to apply the new theme."""
+    for widget in main_frame.winfo_children():
+        apply_theme(widget, current_theme)
+        
 def save_file(entry):
     """Save the content of the text area to a file."""
     open_file = filedialog.asksaveasfile(mode='w', defaultextension='.txt')  # File save dialog
@@ -51,12 +79,25 @@ def show_main_area(root_frame, title, content=""):
     new = Button(main_frame, text="Another Doc", bg="white", fg="black", 
                          command=lambda:subprocess.run(["python", "main.py"]) ) # Placeholder for navigation
     new.pack(side=LEFT, padx=10, pady=10)
-    
-    back_button = Button(main_frame, text="Back to Title", bg="white", fg="black",
-                     command=lambda: title.show_title_selection(root_frame))
-    back_button.pack(side=LEFT, padx=10, pady=10)
-
 
     exit_button = Button(main_frame, text="Exit", bg="white", fg="black", 
                          command=root_frame.quit)  # This will quit the entire app
     exit_button.pack(side=RIGHT, padx=10, pady=10)
+
+    apply_theme(open_button, current_theme)
+
+    theme_toggle_button = Button(main_frame, text="Toggle Theme", command=toggle_theme)
+    theme_toggle_button.pack(side=RIGHT, padx=10, pady=10)
+    apply_theme(theme_toggle_button, current_theme)
+
+# Set initial theme to LIGHT_THEME
+current_theme = theme.LIGHT_THEME
+if __name__ == "__main__":
+    root = Tk()
+    root.geometry("550x620")
+    root.title("Notepad")
+    
+    # Show title selection initially
+    title.show_title_selection(root)
+    
+    root.mainloop()

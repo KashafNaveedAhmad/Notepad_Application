@@ -1,5 +1,5 @@
 from tkinter import *
-import front  # Import the front page module
+import front  # Import the front pagemodule
 
 # Initialize the root window
 root = Tk()
