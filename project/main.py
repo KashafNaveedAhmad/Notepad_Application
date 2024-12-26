@@ -1,5 +1,5 @@
 from tkinter import *
-import front  # Import the front pagemodule
+import front  # Import the front pagemodule, QKY ACESS
 
 # Initialize the root window
 root = Tk()
