@@ -16,7 +16,7 @@ def show_title_selection(root):
     title_selection_frame.pack(fill="both", expand=True)
 
     # Load and display the image
-    image = Image.open("Notepad_Application\project\\3.webp")  # Replace with your image path
+    image = Image.open("project\\3.webp")  # Replace with your image path
     image = image.resize((450, 300))  # Resize the image to fit the screen width
     photo = ImageTk.PhotoImage(image)
     image_label = Label(title_selection_frame, image=photo, bg="black")

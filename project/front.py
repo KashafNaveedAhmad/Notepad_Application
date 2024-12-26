@@ -34,7 +34,7 @@ def show_front_page(root):
     startup_label.pack(pady=20)
 
     # Add an image (Ensure you have a valid image file named "notepad_image.png")
-    image = Image.open("Notepad_Application\project\\2.jpeg")
+    image = Image.open("project\\2.jpeg")
     image = image.resize((400, 200))
     photo = ImageTk.PhotoImage(image)
     image_label = Label(front_frame, image=photo, bg="black")
