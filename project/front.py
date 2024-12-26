@@ -48,5 +48,5 @@ def show_front_page(root):
 
     # Button to open an existing file
     open_button = Button(front_frame, text="Open a File", font=("Arial", 14), bg="white", fg="black", 
-                         command=lambda: open_file_in_working(root))  # Calls the function to open the file in working.py
+                        command=lambda: open_file_in_working(root))  # Calls the function to open the file in working.py
     open_button.pack(pady=10)

@@ -33,7 +33,7 @@ def show_title_selection(root):
 
     # Button to proceed to the next screen (working area)
     next_button = Button(title_selection_frame, text="Next", font=("Arial", 12), bg="white", fg="black", 
-                         command=lambda: show_main_area(root, title_entry.get()))  # Pass the entered title
+                        command=lambda: show_main_area(root, title_entry.get()))  # Pass the entered title
     next_button.pack(pady=20)
 
 # Example root window (this can be handled in your main script)

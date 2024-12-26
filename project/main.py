@@ -6,7 +6,7 @@ root = Tk()
 root.geometry("550x620")
 root.title("Notepad")
 root.config(bg="black")
-root.resizable(False, False)
+root.resizable(False, False)# RESIZE HELP
 
 # Create a root frame to hold the pages
 root_frame = Frame(root)
