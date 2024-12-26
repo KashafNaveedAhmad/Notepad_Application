@@ -1,3 +1,4 @@
+# front page
 from tkinter import *
 from PIL import Image, ImageTk  # For displaying images
 from tkinter import filedialog  # To open a file dialog
