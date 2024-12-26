@@ -10,6 +10,7 @@ The Notepad Application is a lightweight and intuitive text editor built using P
 - **Open:** Open an existing file into the application.  
 - **Save:** Save the current file.  
 - **Another Doc:** New Dialog open.
+- **Theme:** Change the application theme.
 - **Exit:** Close the application.
 
 ## Prerequisites
