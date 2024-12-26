@@ -77,7 +77,7 @@ def show_main_area(root_frame, title, content=""):
     open_button.pack(side=LEFT, padx=10, pady=10)
 
     new = Button(main_frame, text="Another Doc", bg="white", fg="black", 
-                         command=lambda:subprocess.run(["python", "main.py"]) ) # Placeholder for navigation
+                         command=lambda:subprocess.run(["python", "Notepad_Application\project\main.py"]) ) # Placeholder for navigation
     new.pack(side=LEFT, padx=10, pady=10)
 
     exit_button = Button(main_frame, text="Exit", bg="white", fg="black", 
